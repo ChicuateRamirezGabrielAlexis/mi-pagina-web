@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <title>Mi Primera Página Web</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <button class="boton-tema" id="boton-tema" type="button" aria-label="Activar modo oscuro" aria-pressed="false">
+            <span class="icono-sol" aria-hidden="true">☀️</span>
+            <span class="icono-luna" aria-hidden="true">🌙</span>
+        </button>
+        <h1>Mi primera página web</h1>
+        <p>Aprendiendo HTML y CSS</p>
+    </header>
+
+    <main>
+
+        <section class="presentacion">
+            <h2>Hola, soy Alexis 👋</h2>
+
+            <p>
+                Soy estudiante de Ingeniería en Sistemas de Información
+                y estoy aprendiendo desarrollo web.
+            </p>
+
+            <button class="boton" id="boton-presentacion" type="button" aria-expanded="false" aria-controls="tarjeta-presentacion">
+                Conocer más
+            </button>
+
+            <article class="tarjeta-presentacion" id="tarjeta-presentacion" hidden>
+                <h3>Un poco sobre mí</h3>
+                <p>
+                    Soy Alexis, estudiante de Ingeniería en Sistemas de Información.
+                    Me interesa aprender programación, redes y desarrollo web.
+                </p>
+            </article>
+        </section>
+
+        <article class="detalle-materia" id="detalle-materia" aria-live="polite" hidden>
+            <h3></h3>
+            <div class="detalle-contenido">
+                <div>
+                    <h4>¿Qué es?</h4>
+                    <p class="que-es"></p>
+                </div>
+                <div>
+                    <h4>¿Para qué sirve?</h4>
+                    <p class="para-que-sirve"></p>
+                </div>
+                <div>
+                    <h4>¿Qué hace?</h4>
+                    <p class="que-hace"></p>
+                </div>
+            </div>
+        </article>
+
+        <section class="materias" id="materias">
+
+            <h2>Mis materias</h2>
+
+            <div class="contenedor-tarjetas">
+
+                <button class="tarjeta" type="button" data-descripcion="Programación y desarrollo de aplicaciones." data-que-es="Un lenguaje de programación orientado a objetos." data-para-que-sirve="Sirve para crear aplicaciones, páginas web y sistemas." data-que-hace="Permite escribir instrucciones para que una computadora realice tareas.">
+                    <span class="tarjeta-titulo">Java ☕</span>
+                    <span>Programación y desarrollo de aplicaciones.</span>
+                </button>
+
+                <button class="tarjeta" type="button" data-descripcion="Vectores, matrices y sistemas de ecuaciones." data-que-es="Una rama de las matemáticas que estudia vectores, matrices y espacios." data-para-que-sirve="Sirve para resolver problemas matemáticos y representar datos." data-que-hace="Ayuda a analizar sistemas de ecuaciones y operaciones con datos.">
+                    <span class="tarjeta-titulo">Álgebra Lineal 📐</span>
+                    <span>Vectores, matrices y sistemas de ecuaciones.</span>
+                </button>
+
+                <button class="tarjeta" type="button" data-descripcion="Administración y configuración de redes." data-que-es="El estudio de la comunicación entre computadoras y dispositivos." data-para-que-sirve="Sirve para conectar equipos y compartir información y recursos." data-que-hace="Permite configurar, mantener y proteger una red.">
+                    <span class="tarjeta-titulo">Administración de redes 🌐</span>
+                    <span>Administración y configuración de redes.</span>
+                </button>
+
+                <button class="tarjeta" type="button" data-descripcion="Algoritmos, listas, pilas y colas." data-que-es="El estudio de formas organizadas de almacenar y manejar información." data-para-que-sirve="Sirve para crear programas más rápidos y ordenados." data-que-hace="Permite elegir la mejor manera de guardar y procesar datos.">
+                    <span class="tarjeta-titulo">Estructuras de Datos 🧩</span>
+                    <span>Algoritmos, listas, pilas y colas.</span>
+                </button>
+
+                <button class="tarjeta" type="button" data-descripcion="Creación y administración de máquinas virtuales." data-que-es="La tecnología que permite simular una computadora dentro de otra." data-para-que-sirve="Sirve para probar sistemas y ejecutar diferentes entornos en un mismo equipo." data-que-hace="Crea y administra computadoras virtuales usando los recursos del equipo físico.">
+                    <span class="tarjeta-titulo">Virtualización 🖥️</span>
+                    <span>Creación y administración de máquinas virtuales.</span>
+                </button>
+
+                <button class="tarjeta" type="button" data-descripcion="Diseño y producción de contenidos digitales." data-que-es="El uso de herramientas digitales para crear imágenes, videos y sonido." data-para-que-sirve="Sirve para comunicar ideas de manera visual, sonora e interactiva." data-que-hace="Permite planificar, diseñar y editar contenidos multimedia.">
+                    <span class="tarjeta-titulo">Tecnología multimedia 🎬</span>
+                    <span>Diseño y producción de contenidos digitales.</span>
+                </button>
+
+                <button class="tarjeta" type="button" data-descripcion="Fundamentos de circuitos y sistemas electrónicos digitales." data-que-es="El estudio de circuitos que trabajan con señales digitales." data-para-que-sirve="Sirve para comprender cómo funcionan los dispositivos electrónicos." data-que-hace="Analiza y construye sistemas que procesan información usando señales binarias.">
+                    <span class="tarjeta-titulo">Sistemas digitales ⚡</span>
+                    <span>Fundamentos de circuitos y sistemas electrónicos digitales.</span>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p></p>
+    </footer>
+
+</body>
+</html>
