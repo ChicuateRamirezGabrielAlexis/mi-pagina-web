@@ -2,21 +2,21 @@ const botonPresentacion = document.querySelector('#boton-presentacion');
 const tarjetaPresentacion = document.querySelector('#tarjeta-presentacion');
 const tarjetas = document.querySelectorAll('.tarjeta');
 const detalleMateria = document.querySelector('#detalle-materia');
-const tituloMateria = detalleMateria.querySelector('h3');
-const queEs = detalleMateria.querySelector('.que-es');
-const paraQueSirve = detalleMateria.querySelector('.para-que-sirve');
-const queHace = detalleMateria.querySelector('.que-hace');
+const tituloMateria = detalleMateria?.querySelector('h3');
+const queEs = detalleMateria?.querySelector('.que-es');
+const paraQueSirve = detalleMateria?.querySelector('.para-que-sirve');
+const queHace = detalleMateria?.querySelector('.que-hace');
 const botonTema = document.querySelector('#boton-tema');
 
 const temaGuardado = localStorage.getItem('tema');
 
-if (temaGuardado === 'oscuro') {
+if (temaGuardado === 'oscuro' && botonTema) {
     document.body.classList.add('modo-oscuro');
     botonTema.setAttribute('aria-label', 'Activar modo claro');
     botonTema.setAttribute('aria-pressed', 'true');
 }
 
-botonTema.addEventListener('click', () => {
+botonTema?.addEventListener('click', () => {
     const modoOscuroActivo = document.body.classList.toggle('modo-oscuro');
 
     botonTema.setAttribute(
@@ -27,7 +27,7 @@ botonTema.addEventListener('click', () => {
     localStorage.setItem('tema', modoOscuroActivo ? 'oscuro' : 'claro');
 });
 
-botonPresentacion.addEventListener('click', () => {
+botonPresentacion?.addEventListener('click', () => {
     const estaOculta = tarjetaPresentacion.hidden;
 
     tarjetaPresentacion.hidden = !estaOculta;
