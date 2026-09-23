@@ -63,11 +63,13 @@ header {
     font-size: 1.2rem;
     height: 44px;
     justify-content: center;
+    min-width: 44px;
+    padding: 0 12px;
     position: absolute;
     right: 20px;
     top: 20px;
     transition: background-color 0.2s, transform 0.2s;
-    width: 44px;
+    width: auto;
 }
 
 .boton-tema:hover,
