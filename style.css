@@ -56,11 +56,12 @@ header {
     align-items: center;
     background-color: transparent;
     border: 2px solid rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
+    border-radius: 999px;
     color: white;
     cursor: pointer;
     display: flex;
     font-size: 1.2rem;
+    gap: 6px;
     height: 44px;
     justify-content: center;
     min-width: 44px;
@@ -70,6 +71,7 @@ header {
     top: 20px;
     transition: background-color 0.2s, transform 0.2s;
     width: auto;
+    white-space: nowrap;
 }
 
 .boton-tema:hover,
