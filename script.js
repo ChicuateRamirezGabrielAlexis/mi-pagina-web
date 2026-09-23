@@ -8,24 +8,40 @@ const paraQueSirve = detalleMateria?.querySelector('.para-que-sirve');
 const queHace = detalleMateria?.querySelector('.que-hace');
 const botonTema = document.querySelector('#boton-tema');
 
-const temaGuardado = localStorage.getItem('tema');
+let temaGuardado = null;
 
-if (temaGuardado === 'oscuro' && botonTema) {
-    document.body.classList.add('modo-oscuro');
-    botonTema.setAttribute('aria-label', 'Activar modo claro');
-    botonTema.setAttribute('aria-pressed', 'true');
+try {
+    temaGuardado = localStorage.getItem('tema');
+} catch (error) {
+    temaGuardado = null;
 }
 
-botonTema?.addEventListener('click', () => {
-    const modoOscuroActivo = document.body.classList.toggle('modo-oscuro');
+if (temaGuardado === 'oscuro') {
+    document.body.classList.add('modo-oscuro');
+}
 
-    botonTema.setAttribute(
-        'aria-label',
-        modoOscuroActivo ? 'Activar modo claro' : 'Activar modo oscuro'
-    );
-    botonTema.setAttribute('aria-pressed', String(modoOscuroActivo));
-    localStorage.setItem('tema', modoOscuroActivo ? 'oscuro' : 'claro');
-});
+if (botonTema) {
+    const actualizarBotonTema = (modoOscuroActivo) => {
+        botonTema.setAttribute(
+            'aria-label',
+            modoOscuroActivo ? 'Activar modo claro' : 'Activar modo oscuro'
+        );
+        botonTema.setAttribute('aria-pressed', String(modoOscuroActivo));
+    };
+
+    actualizarBotonTema(temaGuardado === 'oscuro');
+
+    botonTema.addEventListener('click', () => {
+        const modoOscuroActivo = document.body.classList.toggle('modo-oscuro');
+
+        actualizarBotonTema(modoOscuroActivo);
+
+        try {
+            localStorage.setItem('tema', modoOscuroActivo ? 'oscuro' : 'claro');
+        } catch (error) {
+        }
+    });
+}
 
 botonPresentacion?.addEventListener('click', () => {
     const estaOculta = tarjetaPresentacion.hidden;
