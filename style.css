@@ -153,6 +153,10 @@ main {
     background-color: var(--color-principal-hover);
 }
 
+.enlace-carrera {
+    margin-left: 10px;
+}
+
 .tarjeta-presentacion {
     background-color: var(--color-fondo);
     border-left: 4px solid var(--color-principal);
@@ -297,6 +301,14 @@ main {
     line-height: 1.5;
 }
 
+.pagina-carrera .presentacion {
+    text-align: left;
+}
+
+.volver-inicio {
+    text-align: center;
+}
+
 /* Pie de página */
 
 footer {
@@ -331,5 +343,10 @@ footer {
     .boton-tema {
         right: 12px;
         top: 12px;
+    }
+
+    .enlace-carrera {
+        margin-left: 0;
+        margin-top: 12px;
     }
 }
